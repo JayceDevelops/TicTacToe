@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <img src="assets/logo.png">
+        <h1>WELCOME TO THE GAME!</h1>
+        <div class="playerOne input">
+            <h2>Enter Player One Name (X)</h2>
+            <input id="OneName" placeholder="player one">
+        </div>
+        <div class="playerTwo input">
+            <h2>Enter Player Two Name (O)</h2>
+            <input id="TwoName" placeholder="player two">
+        </div>
+        <div class="begin">
+            <h1>Begin Game</h1>
+            <h1>></h1>
+        </div>
+    </main>
+    <div class="game">
+        <header>
+            <div class="playerOneStats scoreTracker">
+                <h1>X</h1>
+                <h2>Alex :</h2>
+                <h2 class="playerOneScore">0</h2>
+            </div>
+            <div class="matchSummary">
+                <h1>VS</h1>
+            </div>
+            <div class="playerTwoStats scoreTracker">
+                <h1>O</h1>
+                <h2>Sam :</h2>
+                <h2 class="playerTwoScore">0</h2>
+            </div>
+        </header>
+        <div class="play">
+            <h1 class="Current">X Move</h1>
+            <div class="board">   
+            </div>
+            <h1 class="winner"></h1>
+            <div class="buttons">
+                <button class="playAgain">Play Again</button>
+                <button class="mainMenu">Main Menu</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

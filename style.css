@@ -1,0 +1,328 @@
+:root {
+    --Primary: #1D2E61;
+    --Secondary: #2A7CEE;
+    --Accent: #F28729;
+    --Game-Card: #FFFFFF;
+    --Input: #EAEFF8;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: url('assets/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "fredoka";
+    color: var(--Primary)
+}
+
+main > img {
+    width: 20%;
+}
+
+.input {
+    width: 19%;
+    padding-top: 1rem;
+}
+
+.input > h2 {
+    font-size: 16px;
+    font-family: "fredoka";
+    font-weight: 400;
+    padding: 0 0 7px 10px;
+}
+
+.input > input {
+    width: 100%;
+    padding: 14px 20px;
+
+    background-color: transparent;
+
+    font-weight: 500;
+    color: var(--Primary);
+    font-size: 20px;
+
+    border: 1px solid #C5D3ED;
+    border-radius: 25px;
+
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.input > input::placeholder {
+  color: #7DA8DF;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.input > input:hover {
+    background-color: #F0F4FC;
+    border-color: var(--Secondary);
+}
+
+.input > input:focus {
+    background-color: #FFFFFF;
+    border-color: var(--Secondary);
+    box-shadow: 0 0 0 4px rgba(42, 124, 238, 0.15);
+}
+
+.begin {
+    width: 19%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    background-color: var(--Primary);
+
+    padding: 15px 5px;
+
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: 
+    0px 8px 24px rgba(29, 46, 97, 0.3),
+    0px 4px 8px rgba(29, 46, 97, 0.15);
+
+    margin-top: 1rem;
+}
+
+.begin:hover {
+  transform: translateY(-2px);
+  background-color: #243975;  
+  
+  box-shadow: 
+    0px 12px 28px rgba(29, 46, 97, 0.35),
+    0px 6px 12px rgba(29, 46, 97, 0.2);
+}
+
+.begin:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0px 4px 12px rgba(29, 46, 97, 0.25),
+    0px 2px 4px rgba(29, 46, 97, 0.15);
+}
+
+.begin > h1 {
+    font-family: "fredoka";
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--Game-Card);
+}
+
+.game {
+    width: 100vw;
+    height: 100vh;
+
+    background: url('assets/GameBoardBackground.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: none;
+    grid-template-rows: min-content auto;
+}
+
+.game > header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    background-color: lightblue;
+    backdrop-filter: blur(10px);
+
+    padding: 1rem;
+}
+
+.game > header > .scoreTracker {
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "fredoka";
+    font-size: 35px;
+}
+
+.game > header > .scoreTracker > h1{
+    font-size: 100px;
+    color: var(--Secondary);
+    padding-right: 5rem;
+}
+
+.game > header > .scoreTracker > h2{
+    color: var(--Secondary);
+    padding-right: 2rem;
+    letter-spacing: 1px;
+}
+
+.game > header > .playerOneStats > .playerOneScore{
+    color: black;
+}
+
+.matchSummary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "fredoka";
+    font-style: italic;
+    font-size: 50px;
+
+    color: var(--Primary)
+}
+
+.game > header > .playerTwoStats > h1{
+    color: var(--Accent);
+}
+
+.game > header > .playerTwoStats > h2{
+    color: var(--Accent);
+}
+
+.game > header > .playerTwoStats > .playerTwoScore{
+    color: black;
+}
+
+.play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.play > .board {
+    background-color: transparent;
+
+    width: 35%;
+    height: 50vh;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+}
+
+.play > .board > .spot {
+    background-color: var(--Game-Card);
+    width: 13rem;
+    max-width: 13rem;
+    max-height: 13rem;
+    height: 10rem;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "fredoka";
+    font-weight: bold;
+    font-size: 3rem;
+
+    border-radius: 16px;   
+    
+    overflow: hidden;
+    
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+    0px 4px 10px rgba(125, 168, 223, 0.15),
+    0px 2px 4px rgba(29, 46, 97, 0.05);
+
+}
+
+.play > .board > .spot:hover {
+    transform: translateY(-2px);
+}
+
+.play > .board > .spot:active {
+    transform: translateY(5px);
+}
+
+.play > h1 {
+    font-family: "fredoka";
+    padding: 1rem;
+    font-size: 50px;
+}
+
+.play > .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 50%;
+    padding-top: 1rem;
+}
+
+.play > .buttons > button {
+    width: 20%;
+    color: var(--Game-Card);
+
+    font-family: "fredoka";
+    font-size: 16px;
+
+    background-color: var(--Primary);
+
+    padding: 15px 5px;
+
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: 
+    0px 8px 24px rgba(29, 46, 97, 0.3),
+    0px 4px 8px rgba(29, 46, 97, 0.15);
+}
+
+.play > .buttons > button:hover {
+    transform: translateY(-2px);
+    background-color: #243975;  
+    color: var(--Game-Card);
+  
+  box-shadow: 
+    0px 12px 28px rgba(29, 46, 97, 0.35),
+    0px 6px 12px rgba(29, 46, 97, 0.2);
+}
+
+.play > .buttons > button:active {
+    transform: translateY(1px);
+  box-shadow: 
+    0px 4px 12px rgba(29, 46, 97, 0.25),
+    0px 2px 4px rgba(29, 46, 97, 0.15);
+}
+
+.play > .buttons > .playAgain {
+    display: none;
+    background-color: var(--Game-Card);
+    border: 2px solid var(--Primary);
+    color: var(--Primary)
+}
+
+
+@font-face {
+    font-family: "fredoka";
+    src: url('assets/fonts/Fredoka/Fredoka-VariableFont_wdth\,wght.ttf');
+}
